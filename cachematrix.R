@@ -1,4 +1,7 @@
-##Stores an inverted matrix and 4 functions in an object. 
+##These 2 functions inverts a matrix and caches it. 
+##If a matrix is already cached it wont be caclulated again.
+
+##Creates an object which stores 4 functions and an inverted matrix as the result of the cachematrix function. 
 makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
         set <- function(y) {
@@ -14,7 +17,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-##Inverts a matrix and stores the result in the makeCacheMatrix object. 
+##Inverts a matrix and stores the result in the makeCacheMatrix object.
 cacheSolve <- function(x) {
         m <- x$getsolve()
         if(!is.null(m)) {
