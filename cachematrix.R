@@ -2,6 +2,7 @@
 ##If a matrix is already cached it wont be caclulated again.
 
 ##Creates an object which stores 4 functions and an inverted matrix as the result of the cachematrix function. 
+
 makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
         set <- function(y) {
@@ -23,9 +24,10 @@ cacheSolve <- function(x) {
         if(!is.null(m)) {
                 message("getting cached data")
                 return(m)
-        } 
+        } else{message("inverting matrix...")
         data <- x$get()  
         m <- solve(data)
         x$setsolve(m)
         m
+}
 }
